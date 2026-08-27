@@ -1,13 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sunrisedentalclinic.models;
 
-/**
- *
- * @author saadm
- */
-public class Patient {
-    
+public class Patient extends Person {
+    private String address;
+
+    public Patient() {
+        super();
+    }
+
+    public Patient(int id, String name, String contactNumber, String address) {
+        super(id, name, contactNumber);
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("Patient ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Contact: " + contactNumber);
+        System.out.println("Address: " + address);
+    }
 }

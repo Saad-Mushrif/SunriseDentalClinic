@@ -1,0 +1,42 @@
+package sunrisedentalclinic.models;
+
+public abstract class Person {
+    protected int id;
+    protected String name;
+    protected String contactNumber;
+
+    public Person() {
+    }
+
+    public Person(int id, String name, String contactNumber) {
+        this.id = id;
+        this.name = name;
+        this.contactNumber = contactNumber;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public abstract void displayDetails();
+}

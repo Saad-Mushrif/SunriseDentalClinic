@@ -3,7 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/saadm/Desktop/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/SunriseDentalClinic.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/dao/DatabaseConnection.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/models/Patient.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/services/BillingService.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/dao/UserDAO.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/models/User.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/services/AuthService.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/dao/AppointmentDAO.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/models/Bill.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/services/AppointmentService.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/ui/LoginFrame.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/ui/DashboardFrame.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/ui/RegisterAppointmentFrame.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/models/Appointment.java</file>
+            <file>file:/C:/Users/saadm/Desktop/AP/SunriseDentalClinic/SunriseDentalClinic/src/sunrisedentalclinic/ui/BillingFrame.java</file>
         </group>
     </open-files>
 </project-private>
