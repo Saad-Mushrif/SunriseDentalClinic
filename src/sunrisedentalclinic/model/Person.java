@@ -1,4 +1,4 @@
-package sunrisedentalclinic.models;
+package sunrisedentalclinic.model;
 
 public abstract class Person {
     protected int id;
@@ -40,3 +40,4 @@ public abstract class Person {
 
     public abstract void displayDetails();
 }
+

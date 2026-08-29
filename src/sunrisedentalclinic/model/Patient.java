@@ -1,4 +1,4 @@
-package sunrisedentalclinic.models;
+package sunrisedentalclinic.model;
 
 public class Patient extends Person {
     private String address;
@@ -28,3 +28,4 @@ public class Patient extends Person {
         System.out.println("Address: " + address);
     }
 }
+

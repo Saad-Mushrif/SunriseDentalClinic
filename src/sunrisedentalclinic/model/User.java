@@ -1,4 +1,4 @@
-package sunrisedentalclinic.models;
+package sunrisedentalclinic.model;
 
 public class User extends Person {
     private String username;
@@ -49,3 +49,4 @@ public class User extends Person {
         System.out.println("Contact: " + contactNumber);
     }
 }
+
