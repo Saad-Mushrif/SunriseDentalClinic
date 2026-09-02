@@ -10,7 +10,6 @@ public class UserSession {
     private String sessionToken;
     private static final String SESSION_FILE = "session.txt";
 
-    // Private constructor for Singleton
     private UserSession() {
     }
 
