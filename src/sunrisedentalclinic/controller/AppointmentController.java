@@ -1,15 +1,58 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sunrisedentalclinic.controller;
 
-/**
- *
- * @author saadm
- */
+import java.net.URLEncoder;
+import java.util.Map;
+import sunrisedentalclinic.server.SunriseServer;
+
 public class AppointmentController {
-    
+
+    public boolean registerAppointment(String patientName, String contactNumber, String address,
+                                       String dentistName, String treatmentType, 
+                                       String appointmentDate, String appointmentTime) {
+        try {
+            // Step 1: Create the Patient via Web Service
+            String patientPayload = "name=" + URLEncoder.encode(patientName, "UTF-8") +
+                                    "&contactNumber=" + URLEncoder.encode(contactNumber, "UTF-8") +
+                                    "&address=" + URLEncoder.encode(address, "UTF-8");
+            
+            String patientResponseStr = HttpUtils.sendPostRequest("/api/patients", patientPayload);
+            Map<String, String> patientResponse = SunriseServer.parseFormData(patientResponseStr);
+
+            if (!"success".equals(patientResponse.get("status"))) {
+                return false; // Failed to create patient
+            }
+            
+            String patientId = patientResponse.get("patientId");
+
+            // Step 2: Create the Appointment linked to the new patientId
+            String apptPayload = "patientId=" + URLEncoder.encode(patientId, "UTF-8") +
+                                 "&dentistName=" + URLEncoder.encode(dentistName, "UTF-8") +
+                                 "&treatmentType=" + URLEncoder.encode(treatmentType, "UTF-8") +
+                                 "&appointmentDate=" + URLEncoder.encode(appointmentDate, "UTF-8") +
+                                 "&appointmentTime=" + URLEncoder.encode(appointmentTime, "UTF-8");
+
+            String apptResponseStr = HttpUtils.sendPostRequest("/api/appointments", apptPayload);
+            Map<String, String> apptResponse = SunriseServer.parseFormData(apptResponseStr);
+
+            return "success".equals(apptResponse.get("status"));
+
+        } catch (Exception e) {
+            System.out.println("Registration Controller Error: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public Map<String, String> searchAppointment(String appointmentNumber) {
+        try {
+            String query = "number=" + URLEncoder.encode(appointmentNumber, "UTF-8");
+            String responseStr = HttpUtils.sendGetRequest("/api/appointments", query);
+            
+            Map<String, String> responseMap = SunriseServer.parseFormData(responseStr);
+            return responseMap; // Returns a map containing the data or the error status
+            
+        } catch (Exception e) {
+            System.out.println("Search Controller Error: " + e.getMessage());
+            return null;
+        }
+    }
 }
-
-
