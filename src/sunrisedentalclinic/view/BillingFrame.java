@@ -198,9 +198,13 @@ public class BillingFrame extends javax.swing.JFrame {
 
             javax.swing.JOptionPane.showMessageDialog(this, receipt, "Printed Receipt", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
-            javax.swing.JOptionPane.showMessageDialog(this, "Bill saved successfully to database!", "Success", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } else if (result != null && result.containsKey("message")) {
+
+            String serverError = result.get("message");
+            javax.swing.JOptionPane.showMessageDialog(this, serverError, "Billing Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "Failed to calculate bill. Ensure Appointment No exists.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+
+            javax.swing.JOptionPane.showMessageDialog(this, "Network Error: Failed to contact the server.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnCalculateActionPerformed
 
