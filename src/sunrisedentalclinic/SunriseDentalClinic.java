@@ -1,20 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package sunrisedentalclinic;
 
-/**
- *
- * @author saadm
- */
 public class SunriseDentalClinic {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        sunrisedentalclinic.server.SunriseServer server = new sunrisedentalclinic.server.SunriseServer();
+        server.startServer();
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                sunrisedentalclinic.controller.AuthController auth = new sunrisedentalclinic.controller.AuthController();
+                if (auth.validateLocalToken()) {
+                    new sunrisedentalclinic.view.DashboardFrame().setVisible(true);
+                } else {
+                    new sunrisedentalclinic.view.LoginFrame().setVisible(true);
+                }
+            }
+        });
     }
-    
+
 }

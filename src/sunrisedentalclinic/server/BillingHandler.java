@@ -13,6 +13,7 @@ import sunrisedentalclinic.model.Bill;
 public class BillingHandler implements HttpHandler {
 
     private final BillDAO billDAO = new BillDAO();
+    private final sunrisedentalclinic.dao.AppointmentDAO appointmentDAO = new sunrisedentalclinic.dao.AppointmentDAO();
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -34,6 +35,16 @@ public class BillingHandler implements HttpHandler {
             double consultFee = Double.parseDouble(params.get("consultationFee"));
             double treatmentCost = Double.parseDouble(params.get("treatmentCost"));
             String billDate = params.get("billDate");
+
+            if (appointmentDAO.getAppointmentByNumber(apptNo) == null) {
+                sendResponse(exchange, 400, "status=error&message=Appointment ID does not exist");
+                return;
+            }
+
+            if (billDAO.getBillByAppointmentNo(apptNo) != null) {
+                sendResponse(exchange, 400, "status=error&message=A bill already exists for this Appointment ID");
+                return;
+            }
 
             Bill bill = new Bill(0, apptNo, consultFee, treatmentCost, billDate);
 
