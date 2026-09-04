@@ -1,6 +1,7 @@
 package sunrisedentalclinic.model;
 
 public abstract class Person {
+
     protected int id;
     protected String name;
     protected String contactNumber;
@@ -40,4 +41,3 @@ public abstract class Person {
 
     public abstract void displayDetails();
 }
-
