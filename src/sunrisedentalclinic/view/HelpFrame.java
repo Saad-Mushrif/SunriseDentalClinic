@@ -26,21 +26,69 @@ public class HelpFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        btnBack = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(59, 130, 246));
+
+        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel7.setText("SUNRISE DENTAL CLINIC - SYSTEM USER MANUAL");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Sans Serif Collection", 0, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(100, 100, 100));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("1. SYSTEM NAVIGATION\n• Use the central Dashboard to access all clinic \n  modules.\n• Unauthorized access is restricted. Only users with \n  'Admin' privileges may register new staff accounts.\n\n2. REGISTERING APPOINTMENTS\n• All fields are mandatory. Ensure the patient's \n  contact details are verified before submission.\n• STRICT DATE FORMAT: All appointment dates must be \n  entered exactly as YYYY-MM-DD (e.g., 2026-10-15).\n• STRICT TIME FORMAT: Time must be entered in 24-hour \n  format (e.g., 14:30).\n\n3. VIEWING APPOINTMENTS\n• You must possess the system-generated Appointment ID \n  to retrieve patient records.\n• If an ID is not found, verify with the patient that \n  the registration was completed successfully.\n\n4. BILLING & RECEIPTS\n• Billing strictly requires an existing Appointment ID.\n• Do not include currency symbols ($) when entering \n  Consultation or Treatment fees; use numbers only.\n• The system will automatically calculate the total \n  and generate a printable receipt upon submission.\n\n5. SECURITY PROTOCOLS\n• Select \"Remember Me\" at login to preserve your \n  session token for the day.\n• Always click \"Logout\" or \"Exit System\" when leaving \n  the reception desk to protect patient data privacy.");
+        jTextArea1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        btnBack.setBackground(new java.awt.Color(204, 204, 204));
+        btnBack.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 0, 0));
+        btnBack.setText("Close");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +126,9 @@ public class HelpFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,16 +10,16 @@ public class BillingController {
 
     public Map<String, String> calculateAndSaveBill(String appointmentNo, String consultationFee, String treatmentCost) {
         try {
-            // Get today's date for the bill
+
             String today = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-            String payload = "appointmentNo=" + URLEncoder.encode(appointmentNo, "UTF-8") +
-                             "&consultationFee=" + URLEncoder.encode(consultationFee, "UTF-8") +
-                             "&treatmentCost=" + URLEncoder.encode(treatmentCost, "UTF-8") +
-                             "&billDate=" + URLEncoder.encode(today, "UTF-8");
+            String payload = "appointmentNo=" + URLEncoder.encode(appointmentNo, "UTF-8")
+                    + "&consultationFee=" + URLEncoder.encode(consultationFee, "UTF-8")
+                    + "&treatmentCost=" + URLEncoder.encode(treatmentCost, "UTF-8")
+                    + "&billDate=" + URLEncoder.encode(today, "UTF-8");
 
             String responseStr = HttpUtils.sendPostRequest("/api/bills", payload);
-            
+
             return SunriseServer.parseFormData(responseStr);
 
         } catch (Exception e) {
